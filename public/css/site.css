@@ -21,3 +21,8 @@ body.modal-open {
     overflow-y: auto;
     padding-right: 0 !important;
 }
+
+
+.ui-permission-editable, .ui-permission-freely, .ui-permission-locked {
+  display: none;
+}
