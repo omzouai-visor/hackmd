@@ -308,9 +308,12 @@ function parseToHistory (list, notehistory, callback) {
       }
             // parse time to timestamp and fromNow
       const timestamp = (typeof notehistory[i].time === 'number' ? moment(notehistory[i].time) : moment(notehistory[i].time, 'MMMM Do YYYY, h:mm:ss a'))
+      const created = (typeof notehistory[i].created === 'number' ? moment(notehistory[i].created) : moment(notehistory[i].created, 'MMMM Do YYYY, h:mm:ss a'))
       notehistory[i].timestamp = timestamp.valueOf()
       notehistory[i].fromNow = timestamp.fromNow()
-      notehistory[i].time = timestamp.format('llll')
+      notehistory[i].time = timestamp.format('llll');
+      notehistory[i].created = created.valueOf();
+      notehistory[i].createdTime = created.format('llll');
             // prevent XSS
       notehistory[i].text = S(notehistory[i].text).escapeHTML().s
       notehistory[i].tags = (notehistory[i].tags && notehistory[i].tags.length > 0) ? S(notehistory[i].tags).escapeHTML().s.split(',') : []

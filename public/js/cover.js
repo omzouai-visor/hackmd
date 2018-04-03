@@ -33,7 +33,7 @@ import List from 'list.js'
 import S from 'string'
 
 const options = {
-  valueNames: ['id', 'text', 'timestamp', 'fromNow', 'time', 'tags', 'pinned'],
+  valueNames: ['id', 'text', 'timestamp', 'fromNow', 'time', 'tags', 'pinned', 'created', 'createdTime', 'owner'],
   item: '<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">' +
             '<span class="id" style="display:none;"></span>' +
             '<a href="#">' +
@@ -43,10 +43,14 @@ const options = {
                     '<div class="content">' +
                         '<h4 class="text"></h4>' +
                         '<p>' +
-                            '<i><i class="fa fa-clock-o"></i> visited </i><i class="fromNow"></i>' +
+                            '<i><i class="fa fa-clock-o"></i> edited </i><i class="fromNow"></i>' +
                             '<br>' +
-                            '<i class="timestamp" style="display:none;"></i>' +
-                            '<i class="time"></i>' +
+                            '<i class="created" style="display:none;"></i>' +
+                            '<span>Edited: <i class="time"></i></span>' +
+                            '<br>' +
+                            '<span>Created: <i class="createdTime"></i></span>' +
+                            '<br>' +
+                            '<span>Owner: <i class="owner"></i></span>' +
                         '</p>' +
                         '<p class="tags"></p>' +
                     '</div>' +
